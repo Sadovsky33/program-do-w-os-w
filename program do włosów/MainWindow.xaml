@@ -1,12 +1,36 @@
-﻿<Window x:Class="program_do_włosów.MainWindow"
+<Window x:Class="WlosyApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:program_do_włosów"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Obliczanie Liczby Włosów" Height="400" Width="600">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <!-- Wprowadzanie parametrów -->
+        <TextBlock Text="Gęstość włosów (włosów/cm2):" Grid.Row="0" Grid.Column="0" Margin="10"/>
+        <TextBox x:Name="GestoscTextBox" Grid.Row="0" Grid.Column="1" Margin="10" Text="200"/>
+
+        <TextBlock Text="Obwód głowy (cm):" Grid.Row="1" Grid.Column="0" Margin="10"/>
+        <TextBox x:Name="ObwodTextBox" Grid.Row="1" Grid.Column="1" Margin="10" Text="56"/>
+
+        <TextBlock Text="Wysokość czoła (cm):" Grid.Row="2" Grid.Column="0" Margin="10"/>
+        <TextBox x:Name="WysokoscTextBox" Grid.Row="2" Grid.Column="1" Margin="10" Text="10"/>
+
+        <!-- Wynik -->
+        <TextBlock Text="Liczba włosów:" Grid.Row="3" Grid.Column="0" Margin="10"/>
+        <TextBlock x:Name="WynikTextBlock" Grid.Row="3" Grid.Column="1" Margin="10" FontWeight="Bold"/>
+
+        <!-- Przyciski -->
+        <Button Content="Oblicz" Grid.Row="4" Grid.Column="0" Margin="10" Click="Oblicz_Click"/>
+        <Button Content="Resetuj" Grid.Row="4" Grid.Column="1" Margin="10" Click="Resetuj_Click"/>
     </Grid>
 </Window>
